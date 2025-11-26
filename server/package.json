@@ -1,13 +1,17 @@
 {
-  "name": "server",
+  "name": "CodeUs",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start":"nodemon index.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vaibhav Bhargav",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "yargs": "^18.0.0"
+  }
 }
