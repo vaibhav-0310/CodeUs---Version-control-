@@ -1,7 +1,7 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import initRepo from "./controllers/init.js";
-import addFile from "./controllers/add.js";
+import addRepo from "./controllers/add.js";
 import commitRepo from "./controllers/commit.js";
 import pullRepo from "./controllers/pull.js";
 import pushRepo from "./controllers/push.js";
@@ -18,7 +18,9 @@ yargs(hideBin(process.argv))
         type: "string",
       });
     },
-    addFile
+    (argv)=>{
+      addRepo(argv.file);
+    }
   )
   .command(
     "commit <file>",
