@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "express": "^5.1.0",
+    "uuid": "^13.0.0",
     "yargs": "^18.0.0"
   }
 }

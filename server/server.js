@@ -1,4 +1,4 @@
-import yargs from "yargs";
+import yargs, { argv } from "yargs";
 import { hideBin } from "yargs/helpers";
 import initRepo from "./controllers/init.js";
 import addRepo from "./controllers/add.js";
@@ -23,15 +23,17 @@ yargs(hideBin(process.argv))
     }
   )
   .command(
-    "commit <file>",
+    "commit <message>",
     "Commit the staged file",
     (yargs) => {
-      yargs.positional("messages", {
+      yargs.positional("message", {
         describe: "Commit message",
         type: "string",
       });
     },
-    commitRepo
+    (argv)=>{
+      commitRepo(argv.message);
+    }
   )
   .command("push", "Push commit to S3", {}, pushRepo)
   .command("pull", "Pull commits from S3", {}, pullRepo)
